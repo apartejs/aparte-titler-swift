@@ -22,6 +22,10 @@ jobs:
           test ${PIPESTATUS[0]} -eq 0
       - name: Build for watchOS
         run: xcodebuild build -scheme AparteTitler-Package -destination 'generic/platform=watchOS Simulator' -quiet
+      - name: Build for tvOS
+        run: xcodebuild build -scheme AparteTitler-Package -destination 'generic/platform=tvOS Simulator' -quiet
+      - name: Build for visionOS
+        run: xcodebuild build -scheme AparteTitler-Package -destination 'generic/platform=visionOS Simulator' -quiet
 
   linux:
     runs-on: ubuntu-latest
