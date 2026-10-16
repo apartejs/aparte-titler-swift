@@ -1,0 +1,22 @@
+name: test
+on: [push, pull_request]
+
+jobs:
+  macos:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Swift tests
+        run: swift test -c release
+      - name: Build for iOS
+        run: xcodebuild build -scheme AparteTitler-Package -destination 'generic/platform=iOS Simulator' -quiet
+      - name: Build for watchOS
+        run: xcodebuild build -scheme AparteTitler-Package -destination 'generic/platform=watchOS Simulator' -quiet
+
+  linux:
+    runs-on: ubuntu-latest
+    container: swift:6.0
+    steps:
+      - uses: actions/checkout@v4
+      - name: Swift tests
+        run: swift test -c release

@@ -1,0 +1,12 @@
+.build/
+.swiftpm/
+*.xcodeproj
+xcuserdata/
+DerivedData/
+Package.resolved
+
+# SwiftPM on Windows without symlink rights copies the resource bundles' content
+# into the package root during `swift test`: build output, never source.
+/Info.plist
+/*.bin
+/*.jsonl
