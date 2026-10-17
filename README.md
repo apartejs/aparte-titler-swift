@@ -1,5 +1,7 @@
 # AparteTitler for Swift
 
+[![test](https://github.com/apartejs/aparte-titler-swift/actions/workflows/test.yml/badge.svg)](https://github.com/apartejs/aparte-titler-swift/actions/workflows/test.yml)
+
 **Name a chat conversation on the device — no API call, no network, 133 KB.**
 
 Give it the first message of a conversation, get back a short title made of words from that message:
@@ -25,7 +27,7 @@ Built for chat apps, note-taking and voice-memo apps, and on-device LLM clients 
 
 - Presentation and live demo: **[apartejs.dev/models/titler](https://apartejs.dev/models/titler/)**
 - Models, scores and benchmark: [huggingface.co/apartejs/aparte-titler](https://huggingface.co/apartejs/aparte-titler)
-- JavaScript version: [`@aparte/titler`](https://www.npmjs.com/package/@aparte/titler) on npm
+- Also for Android and the JVM: [aparte-titler-kotlin](https://github.com/apartejs/aparte-titler-kotlin) (`dev.apartejs:titler-latin` on Maven Central), and for JavaScript: [`@aparte/titler`](https://www.npmjs.com/package/@aparte/titler) on npm
 
 ## Install
 
@@ -91,7 +93,7 @@ On a benchmark of real chat messages in 17 languages, the 17-language model scor
 
 ## Same titles everywhere
 
-This package gives **exactly** the titles of the JavaScript runtime and of the Python reference implementation — not approximately: the tests run 1,496 messages in five languages, in both decodings, and compare every title character for character, at the four precisions of the model files (int3, int4, int8, fp32). A title computed on the server in Python, in the browser in JavaScript, or on the phone in Swift is the same title.
+This package gives **exactly** the titles of the JavaScript runtime, of the Kotlin library and of the Python reference implementation — not approximately: the tests run 1,496 messages in five languages, in both decodings, and compare every title character for character, at the four precisions of the model files (int3, int4, int8, fp32). A title computed on the server in Python, in the browser in JavaScript, on an iPhone in Swift or on an Android phone in Kotlin is the same title.
 
 ```bash
 swift test -c release
